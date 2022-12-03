@@ -3,15 +3,49 @@ import ReactDOM from 'react-dom'
 
 
 export default class App extends Component {
-  render() {
-      window.navigator.geolocation.getCurrentPosition(
-          (position) => console.log(position),
-          (error) => console.log(error)// Failure Callback
-      );
+  // NEW FUNCTION belongs to JS | Original way to initialize State
+  constructor(props) {
+    super(props)
 
-    return (
-      <div>You are in the Northern Hemisphere!</div>
-    )
+    // State Object | Any update will subject to re-rendering
+    this.state = { latitude: null, errorMessage: '' }
+
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.setState({ latitude: position.coords.latitude })
+      },
+      (error) => {
+        this.setState({ errorMessage: error.message }) // Leaves the latitude untouched, only errorMessage is changed
+      } // Failure Callback
+    );
+
+  }
+
+  render() {
+    if(this.state.errorMessage && !this.state.latitude){
+      return(
+        <div>
+          {this.state.errorMessage}
+        </div>
+      )
+    }
+
+    if(!this.state.errorMessage && this.state.latitude){
+      return(
+        <div>
+          {this.state.latitude}
+        </div>
+      )
+    }
+
+    else{
+      return(
+        <div>
+          Loading...
+        </div>
+      )
+    }
+    
   }
 }
 
