@@ -1,6 +1,7 @@
 # React Practice using Class-Based Component ![forthebadge](https://badges.aleen42.com/src/react.svg)
 
 ## App Screenshot
+![image](https://user-images.githubusercontent.com/75917932/205422679-a13251f7-fa6e-42c5-b087-64b6ea0777f9.png)
 
 
 ## What is this Project ?
@@ -11,19 +12,19 @@ The concept behind this app (geolocation-detector) is to study react class-based
 
 - Using Class-based Component enable Asynchronous Programming
 - State Rules in React:
-1.	Only Usable in Class Components
-2.	'State' is a Js Object that contains data relevent to a component
-3.	Updating State on a components causes the component to re-render
-4.	State must be initialized when a component in created
-5.	State can only be updated using the function 'setState'
+    1.	Only Usable in Class Components
+    2.	'State' is a Js Object that contains data relevent to a component
+    3.	Updating State on a components causes the component to re-render
+    4.	State must be initialized when a component in created
+    5.	State can only be updated using the function 'setState'
 - Used Conditional Rendering
 - Used the Browser's Sensor Developer Tools to put a custom geolocation
 - ReactJS Lifecycle Methods:
-1. Constructor -> Good place for one-time setup
-2. Render -> Just returns the JSX
-3. componentDidMount -> Good place for data loading
-4. componentDidUpdate -> Good place to do more data loading when state/props change
-5. componentWillUnmount -> Good place to do clean up
+    1. Constructor -> Good place for one-time setup
+    2. Render -> Just returns the JSX
+    3. componentDidMount -> Good place for data loading
+    4. componentDidUpdate -> Good place to do more data loading when state/props change
+    5. componentWillUnmount -> Good place to do clean up
 - Showing a Picture in ReactJS
 
 ## How to Build ?
