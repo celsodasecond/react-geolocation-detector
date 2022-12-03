@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import HemisphereDisplay from './components/HemisphereDisplay'
 
 
 export default class App extends Component {
-  // NEW FUNCTION belongs to JS | Original way to initialize State
-  constructor(props) {
-    super(props)
 
-    // State Object | Any update will subject to re-rendering
-    this.state = { latitude: null, errorMessage: '' }
+  // New Way to Initialize States
+  state = { latitude: null, errorMessage: '' }
 
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({ latitude: position.coords.latitude })
@@ -18,7 +17,6 @@ export default class App extends Component {
         this.setState({ errorMessage: error.message }) // Leaves the latitude untouched, only errorMessage is changed
       } // Failure Callback
     );
-
   }
 
   render() {
@@ -33,7 +31,7 @@ export default class App extends Component {
     if(!this.state.errorMessage && this.state.latitude){
       return(
         <div>
-          {this.state.latitude}
+          <HemisphereDisplay latitude={this.state.latitude}/>
         </div>
       )
     }
@@ -45,7 +43,7 @@ export default class App extends Component {
         </div>
       )
     }
-    
+
   }
 }
 
