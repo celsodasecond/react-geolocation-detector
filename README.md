@@ -58,7 +58,7 @@ All usage instruction and information update on [create-react-app.md](https://gi
 #### Clone Project
 
 ```shell
-https://github.com/celsodasecond/first-react-app.git
+https://github.com/celsodasecond/react-geolocation-detector
 ```
 
 This Command will copy a full project to your local environment
